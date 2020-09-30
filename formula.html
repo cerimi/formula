@@ -1,0 +1,221 @@
+
+<!DOCTYPE>
+<html>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #3477e2;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+div.fixed {
+  position: fixed;
+  bottom: 500px;
+  right: 500px;
+  width: 300px;
+  border: 3px solid #73AD21;}
+  
+
+</style>
+<body>
+<div class="navbar">
+  <a href="https://www.formula1.com/">F1 Official page</a>
+  <a href="formula3.html">Teams</a>
+  <div class="dropdown">
+    <button class="dropbtn">Social media
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      <a href="https://www.youtube.com/" target="_blank">Youtube</a>
+	  <a href="formula2.html">Lewis Hamilton</a>
+      </div>
+  </div>
+</div>
+<h1>FORMULA 1</h1>
+<p>Formula 1, također poznata i kao F1, a službeno se naziva FIA Formula One World Championship.
+<br> Najviša je klasa jednosjeda u automobilizmu koju je odobrila Međunarodna automobilistička federacija.
+<br> Europa je tradicionalno središte Formule 1 i ostaje njeno vodeće tržište, iako se Velike nagrade održavaju širom svijeta, i njihov broj se povećava.<br>
+Sam sport regulirala je Međunarodna automobilistička federacija FIA i općenito je pod pokroviteljstvom Bernieja Ecclestonea kroz mnoštvo korporacijskih tijela.<br>
+
+<br>Početkom 2000. dominirao je Michael Schumacher i uskrsli Ferrari. Početkom 21. st. oboreno je nekoliko Formulinih rekorda. 2001. Schumacher je postavio novi rekord u najvećem broju osvojenih Velikih nagrada, dok je raniji nositelj tog rekorda bio Alain Prost s 51 osvojenom Velikom nagradom. 2002.</p>
+
+<img src="ferrari1.jpg" alt="Ferrari" width="500" height="300">
+
+<style> table, th, td {
+    border: 1px solid red;
+}</style>
+<form>
+ <table style="width:100%">
+  <tr>
+    <th>Motor</th>
+    <th>Pobjede</th>
+    <th>Sjediste</th>
+	<th>Korisnici</th>
+    <th>Natjece se od</th>
+  </tr>
+  <tr>
+    <td>Ferrari</td>
+    <td>236</td>
+    <td>Maranello, Italija</td>
+	<td>Ferrari, Alfa Romeo, Haas</td>
+	<td>1950.</td>
+  </tr>
+  <tr>
+    <td>Mercedes</td>
+    <td>181</td>
+    <td> Brixworth, Northamptonshire, Velika Britanija</td>
+	<td>Mercedes, Williams</td>
+	<td>1954.</td>
+  </tr>
+  <tr>
+	<td>Renault</td>
+    <td>236</td>
+    <td>Viry-Châtillon, Francuska</td>
+	<td>Renault, Mc Laren</td>
+	<td>1977.</td>
+  </tr>
+  <tr>
+    <td>Honda</td>
+    <td>73</td>
+    <td>Milton Keynes, Buckinghamshire, Velika Britanija</td>
+	<td>AlphaTauri, Red Bull</td>
+	<td>1964.</td>
+  </tr>
+
+  
+</form>
+
+<div class="jumbotron">
+  <div class="container">
+   <h2>Currency Calculator</h2>
+   <p class="lead">Convert the currency</p>
+   <form class="form-inline">
+     <div class="form-group mb-2">
+        <input type="number" class="form-control" id="amount"/>
+     </div>
+     <div class="form-group mx-sm-3 mb-2">
+        <select class="form-control" id="currency-1" required>
+          <option>PLN</option>
+          <option>EUR</option>
+          <option>USD</option>
+        </select>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label>convert to</label>
+        <select class="form-control" id="currency-2" required>
+          <option>EUR</option>
+          <option>USD</option>
+          <option>PLN</option>
+        </select>
+      </div>  
+      <button class="btn calculate-btn btn-primary mb-2">Show me the result!</button>
+    </form>
+    <div class="result">
+      <p>
+        <span class="given-amount"></span> 
+        <span class="base-currency"></span>
+        <span class="final-result"></span> 
+        <span class="second-currency"></span>
+      </p>
+    </div>
+  </div> 
+</div>
+
+<script
+var crrncy = {'EUR': {'PLN': 4.15, 'USD': 0.83}, 'USD': {'PLN': 3.45, 'EUR': 1.2}}
+var btn = document.querySelector('.calculate-btn');
+var baseCurrencyInput = document.getElementById('currency-1');
+var secondCurrencyInput = document.getElementById('currency-2');
+var amountInput = document.getElementById('amount');
+var toShowAmount = document.querySelector('.given-amount');
+var toShowBase = document.querySelector('.base-currency');
+var toShowSecond = document.querySelector('.second-currency');
+var toShowResult = document.querySelector('.final-result');
+
+function convertCurrency(event) {
+  event.preventDefault();
+  var amount = amountInput.value;
+  var from = baseCurrencyInput.value;
+  var to = secondCurrencyInput.value;
+  var result = 0;
+  
+  try{
+    if (from == to){
+      result = amount;
+    } else {
+     result = amount * crrncy[from][to];
+  }
+  }
+  catch(err) {
+    result = amount * (1 / crrncy[to][from]);
+  }
+  
+  toShowAmount.innerHTML = amount;
+  toShowBase.textContent = from + ' = ';
+  toShowSecond.textContent = to;
+  toShowResult.textContent = result; 
+}
+
+btn.addEventListener('click', convertCurrency);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hamilton</title>
+</head>
+<body>
+
+<h1>Opcenito o njemu</h1>
+Lewis Carl Davidson Hamilton (Stevenage, Hertfordshire, Velika Britanija, 7. siječnja 1985.) je britanski aktualni vozač tima Mercedes u svjetskom prvenstvu Formule 1.
+ <br>Godine 2008., postao je svjetski prvak Formule 1, te postao prvi debitant u povijesti koji je vodio u ukupnom poretku vozača.
+ <br>U svojoj prvoj sezoni u Formuli 1, Hamilton je postavio brojne rekorde, dok je u sveukupnom prvenstvu završio na drugom mjestu, samo jedan bod iza Kimija Räikkönena.
+ <br>
+
+
+
+<img src="hamilton.jpg" alt="Hamilton" width="250" height="300">
+ <a href="formula.html">Natrag na prvu stranicu</a>
+ <table class="stat-list">
+        <tbody>
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Team</span>
+        	
+        </th>
+        <td class="stat-value">Mercedes</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Country</span>
+        	
+        </th>
+        <td class="stat-value">United Kingdom</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Podiums</span>
+        	
+        </th>
+        <td class="stat-value">158</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Points</span>
+        	
+        </th>
+        <td class="stat-value">3621</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Grands Prix entered</span>
+        	
+        </th>
+        <td class="stat-value">259</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">World Championships</span>
+        	
+        </th>
+        <td class="stat-value">6</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Highest race finish</span>
+        	
+        </th>
+        <td class="stat-value">1 (x90)</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Highest grid position</span>
+        	
+        </th>
+        <td class="stat-value">1</td>
+        
+    </tr>
+
+            
+                
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Date of birth</span>
+        	
+        </th>
+        <td class="stat-value">07/01/1985</td>
+        
+    </tr>
+
+            
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Place of birth</span>
+        	
+        </th>
+        <td class="stat-value">Stevenage, England</td>
+        
+    </tr>
+
+        </tbody>
+    </table>
+	
+	<div class="jumbotron">
+    <div class="container">
+   <h2>Currency Calculator</h2>
+   <p class="lead">Convert the currency</p>
+   <form class="form-inline">
+     <div class="form-group mb-2">
+        <input type="number" class="form-control" id="amount"/>
+     </div>
+     <div class="form-group mx-sm-3 mb-2">
+        <select class="form-control" id="currency-1" required>
+          <option>HRK</option>
+          <option>EUR</option>
+          <option>USD</option>
+        </select>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label>convert to</label>
+        <select class="form-control" id="currency-2" required>
+          <option>EUR</option>
+          <option>USD</option>
+          <option>HRK</option>
+        </select>
+      </div>  
+      <button class="btn calculate-btn btn-primary mb-2">Show me the result!</button>
+    </form>
+    <div class="result">
+      <p>
+        <span class="given-amount"></span> 
+        <span class="base-currency"></span>
+        <span class="final-result"></span> 
+        <span class="second-currency"></span>
+      </p>
+    </div>
+  </div> 
+</div>
+
+<script>
+
+var crrncy = {'EUR': {'HRK': 7.56, 'USD': 0.83}, 'USD': {'HRK': 6.45, 'EUR': 1.2}}
+var btn = document.querySelector('.calculate-btn');
+var baseCurrencyInput = document.getElementById('currency-1');
+var secondCurrencyInput = document.getElementById('currency-2');
+var amountInput = document.getElementById('amount');
+var toShowAmount = document.querySelector('.given-amount');
+var toShowBase = document.querySelector('.base-currency');
+var toShowSecond = document.querySelector('.second-currency');
+var toShowResult = document.querySelector('.final-result');
+
+function convertCurrency(event) {
+  event.preventDefault();
+  var amount = amountInput.value;
+  var from = baseCurrencyInput.value;
+  var to = secondCurrencyInput.value;
+  var result = 0;
+  
+  try{
+    if (from == to){
+      result = amount;
+    } else {
+     result = amount * crrncy[from][to];
+  }
+  }
+  catch(err) {
+    result = amount * (1 / crrncy[to][from]);
+  }
+  
+  toShowAmount.innerHTML = amount;
+  toShowBase.textContent = from + ' = ';
+  toShowSecond.textContent = to;
+  toShowResult.textContent = result; 
+}
+
+btn.addEventListener('click', convertCurrency);
+
+</script>
+
+
+</body>
+</html>
